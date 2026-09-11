@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --core-primary: #00e5ff;
+  --core-secondary: #00bcd4;
+  --core-bg: #050505;
+  --core-card: #0b0b0b;
+  --glow: rgba(0, 229, 255, 0.6);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--core-bg);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: var(--core-primary);
+  color: #050505;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e3a40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--core-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Reusable cyber utility classes ---------- */
+
+.glass-panel {
+  background: rgba(11, 11, 11, 0.55);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-panel-strong {
+  background: rgba(11, 11, 11, 0.78);
+  border: 1px solid rgba(0, 229, 255, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-glow {
+  text-shadow: 0 0 18px var(--glow);
+}
+
+.border-glow {
+  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.25), 0 0 24px rgba(0, 229, 255, 0.12);
+}
+
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before,
+.hud-corner::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--core-primary);
+  opacity: 0.7;
+}
+.hud-corner::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.hud-corner::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+.grid-cyber {
+  background-image: linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.font-mono-data {
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.05em;
+}
+
+.cyber-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.5), transparent);
+}
+
+.eyebrow {
+  color: var(--core-primary);
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+}
